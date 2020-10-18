@@ -27,9 +27,10 @@ object Rational extends App {
     def * (i: Int): Rational = new Rational(numer * i, denom)
 
     def / (that: Rational): Rational = new Rational(
-      new Rational(numer * that.denom, denom * that.numer)
-    )
+      numer * that.denom, denom * that.numer)
     def / (i: Int): Rational = new Rational(numer, denom * i)
+
+    def square(): Rational = new Rational(numer * numer, denom * denom)
 
     override def toString = s"$n/$d"
 
